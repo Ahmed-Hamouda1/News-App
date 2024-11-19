@@ -25,7 +25,23 @@ class HomePage extends StatelessWidget
             ],
           )
         ),
-        body: all_news_card(),
+        body: const Padding
+        (
+          padding: const EdgeInsets.all(8.0),
+          child: SingleChildScrollView
+          (
+            child: Column
+            (
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: 
+              [
+                AllGategory(),
+                SizedBox(height: 20,),
+                all_news_card(),
+              ],
+            ),
+          ),
+        ),
     );
   }
 }

@@ -9,13 +9,25 @@ class all_news_card extends StatelessWidget
   @override
   Widget build(BuildContext context) 
   {
-    return ListView.builder
+    return Column
     (
-      itemCount: 10,
-      itemBuilder: (context,index)
-      {
-        return NewsCard();
-      }
+      children: List.generate
+      (
+        10,
+        (index) => NewsCard(),
+      ),
     );
+    // return Container
+    // (
+    //   height: 544,
+    //   child: ListView.builder
+    //   (
+    //     itemCount: 10,
+    //     itemBuilder: (context,index)
+    //     {
+    //       return NewsCard();
+    //     }
+    //   ),
+    // );
   }
 }

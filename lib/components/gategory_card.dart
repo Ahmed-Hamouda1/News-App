@@ -11,7 +11,7 @@ class GatrgoryCard extends StatelessWidget
   {
     return Container
     (
-      margin: EdgeInsets.only(left: 5),
+      margin: EdgeInsets.only(right: 5),
       height: 100,
       width: 180,
       decoration: BoxDecoration
