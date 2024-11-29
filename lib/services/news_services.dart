@@ -8,21 +8,28 @@ class NewsServices
   final dio=Dio();
   Future<List<AtricleModel>> getNews() async
   {
-    Response response =await dio.get("https://newsapi.org/v2/everything?q=bitcoin&apiKey=$apiKey");
-    Map<String,dynamic> jsonData=response.data;// data
-    List<dynamic> articles =jsonData["articles"];
-    List<AtricleModel> atriclesNews=[]; 
-    for(var art in articles)
+    try 
     {
-      AtricleModel article=AtricleModel
-      (
-        image: art["urlToImage"],
-        title: art["title"],
-        subTitle: art["description"]
-      );
-      atriclesNews.add(article);
-    }
-    return atriclesNews;
+      Response response =await dio.get("https://newsapi.org/v2/everything?q=bitcoin&apiKey=$apiKey");
+      Map<String,dynamic> jsonData=response.data;// data
+      List<dynamic> articles =jsonData["articles"];
+      List<AtricleModel> atriclesNews=[]; 
+      for(var art in articles)
+      {
+        AtricleModel article=AtricleModel
+        (
+          image: art["urlToImage"],
+          title: art["title"],
+          subTitle: art["description"]
+        );
+        atriclesNews.add(article);
+      }
+      return atriclesNews;
+    }  catch (e) 
+          {
+            return [];
+
+          }
   }
   
 
