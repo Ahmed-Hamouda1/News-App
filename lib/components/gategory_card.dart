@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/pages/gategory.dart';
 
 class GatrgoryCard extends StatelessWidget 
 {
@@ -9,30 +10,46 @@ class GatrgoryCard extends StatelessWidget
   @override
   Widget build(BuildContext context) 
   {
-    return Container
+    return GestureDetector
     (
-      margin: const EdgeInsets.only(right: 5),
-      height: 100,
-      width: 180,
-      decoration: BoxDecoration
-      (
-        //color: Colors.red,
-        image: DecorationImage
+      onTap: ()
+      {
+        Navigator.of(context).push
         (
-          image: AssetImage(image),
-          fit: BoxFit.cover,
-          colorFilter: const ColorFilter.mode(Colors.black, BlendMode.colorDodge)
+          MaterialPageRoute
+          (
+            builder: (context)
+            {
+              return GategoryPage(title:title);
+            }
+          )
+        );
+      },
+      child: Container
+      (
+        margin: const EdgeInsets.only(right: 5),
+        height: 100,
+        width: 180,
+        decoration: BoxDecoration
+        (
+          //color: Colors.red,
+          image: DecorationImage
+          (
+            image: AssetImage(image),
+            fit: BoxFit.cover,
+            colorFilter: const ColorFilter.mode(Colors.black, BlendMode.colorDodge)
+          ),
+          borderRadius: BorderRadius.circular(20),
+      
         ),
-        borderRadius: BorderRadius.circular(20),
-
-      ),
-      child: Center
-      (
-        child: Text
+        child: Center
         (
-          title,
-          style: const TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.bold),
-        )
+          child: Text
+          (
+            title,
+            style: const TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.bold),
+          )
+        ),
       ),
     );
   }

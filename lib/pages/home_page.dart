@@ -23,7 +23,7 @@ class HomePage extends StatelessWidget
             ],
           )
         ),
-        body: const Padding
+        body: Padding
         (
           padding: const EdgeInsets.all(8.0),
           child: SingleChildScrollView
@@ -35,7 +35,7 @@ class HomePage extends StatelessWidget
               [
                 AllGategory(),
                 SizedBox(height: 20,),
-                all_news_card(),
+                all_news_card(gategory: "general",),
               ],
             ),
           ),

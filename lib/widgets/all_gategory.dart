@@ -17,12 +17,12 @@ class AllGategory extends StatelessWidget
         scrollDirection: Axis.horizontal,
         children: 
         [
-          GatrgoryCard(title: "Sport", image: "assets/sport.jpg"),
+          GatrgoryCard(title: "Sports", image: "assets/sport.jpg"),
           GatrgoryCard(title: "Business", image: "assets/business.jpg"),
           GatrgoryCard(title: "Science", image: "assets/science.jpg"),
           GatrgoryCard(title: "Health", image: "assets/health.jpg"),
           GatrgoryCard(title: "Technology", image: "assets/technology.jpeg"),
-          GatrgoryCard(title: "Entertaiment", image: "assets/entertaiment.jpg"),
+          GatrgoryCard(title: "Entertainment", image: "assets/entertaiment.jpg"),
           GatrgoryCard(title: "General", image: "assets/general.jpg")
         ],
       ),

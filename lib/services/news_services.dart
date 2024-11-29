@@ -1,16 +1,17 @@
 import 'package:dio/dio.dart';
 import 'package:news_app/components/atricle_model.dart';
-import 'package:news_app/private.dart';
 
 
 class NewsServices
 {
+  NewsServices({required this.request});
+  String request;
   final dio=Dio();
   Future<List<AtricleModel>> getNews() async
   {
     try 
     {
-      Response response =await dio.get("https://newsapi.org/v2/everything?q=bitcoin&apiKey=$apiKey");
+      Response response =await dio.get(request);
       Map<String,dynamic> jsonData=response.data;// data
       List<dynamic> articles =jsonData["articles"];
       List<AtricleModel> atriclesNews=[]; 
@@ -28,7 +29,6 @@ class NewsServices
     }  catch (e) 
           {
             return [];
-
           }
   }
   
