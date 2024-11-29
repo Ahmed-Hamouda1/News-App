@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:news_app/components/atricle_model.dart';
 import 'package:news_app/private.dart';
 
+
 class NewsServices
 {
   final dio=Dio();

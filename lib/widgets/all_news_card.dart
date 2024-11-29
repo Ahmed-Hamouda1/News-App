@@ -14,6 +14,7 @@ class all_news_card extends StatefulWidget
 
 class _all_news_cardState extends State<all_news_card> 
 {
+  bool isloading =true;
   List<AtricleModel> articles=[];
   @override
   void initState() 
@@ -24,12 +25,15 @@ class _all_news_cardState extends State<all_news_card>
 
   Future<void> getGeneralNews() async {
     articles = await NewsServices().getNews();
+    isloading=false;
+    setState(() {});
   }
 
   @override
   Widget build(BuildContext context) 
   {
-    return Column
+    return isloading? Center(child: CircularProgressIndicator()): 
+    Column
     (
       children: List.generate
       (
@@ -39,4 +43,5 @@ class _all_news_cardState extends State<all_news_card>
     );
   }
 }
+
 
