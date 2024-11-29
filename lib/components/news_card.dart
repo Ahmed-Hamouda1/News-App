@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/components/atricle_model.dart';
 
 class NewsCard extends StatelessWidget 
 {
-  const NewsCard({super.key});
+  NewsCard({super.key,required this.atricleModel});
+  final AtricleModel atricleModel;
 
   @override
   Widget build(BuildContext context) 
@@ -19,26 +21,26 @@ class NewsCard extends StatelessWidget
             borderRadius: BorderRadius.circular(15),
             child: Image.asset
             (
-              "assets/sport.jpg",
+              atricleModel.image!,
               height: 200,
               width: double.infinity,
               fit: BoxFit.cover,
             ),
           ),
-          const Text
+          Text
           (
-            "Ahmed Hamouda Khiry This is My last Project in flutter course with tharwat samy in udemy platform this course good",
+            atricleModel.title!,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
-            style: TextStyle
+            style:  TextStyle
             (
               fontSize: 18, 
               fontWeight: FontWeight.bold
             ),
           ),
-          const Text
+           Text
           (
-            "Ahmed Hamouda Khiry This is My last Project in flutter course with tharwat samy in udemy platform this course good",
+            atricleModel.subTitle!,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
             style: TextStyle
